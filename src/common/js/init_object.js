@@ -12,7 +12,7 @@ module.exports = function() {
 
        
         //console.log("Passed");
-        //console.log(data);
+        console.log(data);
         
         var fips_array = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125];
 
@@ -20,7 +20,7 @@ module.exports = function() {
         this.alldata = this.data;
 
         var first_year = function() {
-            var low_year_value = 2022;
+            var low_year_value = 2023;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].population_year < low_year_value) {
                     low_year_value = data[i].population_year;
@@ -31,7 +31,7 @@ module.exports = function() {
         this.first_year = first_year;
 
         var last_year = function() {
-            var high_year_value = 2022;
+            var high_year_value = 2023;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].population_year > high_year_value) {
                     high_year_value = data[i].population_year;
@@ -50,7 +50,7 @@ module.exports = function() {
         /* POPULATION */
 
         this.retrieveCountyPop = function(fips, year) {
-            var agepop = 0;
+            var agepop = 0; console.log(data.length);
             for (let i = 0; i < data.length; i++) {
                 if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id !== "0") {
                     agepop = agepop + parseInt(data[i].total_jobs);
