@@ -8,11 +8,22 @@ module.exports = function() {
     
     var CMap = function(data) {
 
-        
+         function getJobData(year) {
 
-       
-        //console.log("Passed");
-        console.log(data);
+              var fips_str = "1,3,5,7,9,11,13,14,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95,97,99,101,103,105,107,109,111,113,115,117,119,121,123,125";    
+              var data = $.ajax({
+               url: "https://gis.dola.colorado.gov/lookups/jobs?county="+fips_str+"&year="+year,
+               dataType: 'json',
+               async: false,
+
+               });
+                
+              return data.responseJSON;
+
+            }
+
+      var jobdata = getJobData("2024"); 
+        
         
         var fips_array = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125];
 
@@ -50,25 +61,35 @@ module.exports = function() {
         /* POPULATION */
 
         this.retrieveCountyPop = function(fips, year) {
-            var agepop = 0; console.log(data.length);
+            var agepop = 0;
             for (let i = 0; i < data.length; i++) {
-                if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id !== "0") {
+                if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id !== "10") {
                     agepop = agepop + parseInt(data[i].total_jobs);
                 }
             }
             return agepop; 
         }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //just do 0 to number of age categories
-        this.retrieveTtlJobs = function(fips, year) {
-            var alljobs = 0;
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id === "10") {
-                    alljobs = alljobs + parseInt(data[i].total_jobs);
+
+
+         this.retrieveTtlJobs = function(fips, year) {
+                //var jobdata = getJobData(year);
+                //console.log(jobdata);
+                var alljobs = 0;
+                for (let i = 0; i < jobdata.length; i++) {
+
+                    if (jobdata[i].area_code === fips && jobdata[i].sector_id === "10") {
+                        if (jobdata[i].area_code === 3){
+                            //console.log(jobdata[i].sector_id);console.log(jobdata[i].total_jobs);
+                        }
+                    //alljobs = alljobs + parseInt(jobdata[i].total_jobs);
+                    alljobs = parseInt(jobdata[i].total_jobs);    
+                    }
+                        
                 }
-            }
-            return alljobs;
-        }
+                //console.log(alljobs);
+                return alljobs;
+                                             
+            }  
 
         this.retrieveTtlPopChg = function(fips) {
             return (this.retrieveCountyPop(fips, last_year) - this.retrieveCountyPop(fips, first_year));

@@ -19,9 +19,9 @@ module.exports = function(map: Object, worker_data: Object, resolve: any) {
         },
         onEachFeature: function(feature, layer) {
 
-            layer.on('click', function(e) {
+            /* layer.on('click', function(e) {
                 buildModal(e, worker_data, map);
-            });
+            }); */
 
             layer.on('mouseover', function(e) {
 

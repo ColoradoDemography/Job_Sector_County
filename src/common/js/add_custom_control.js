@@ -23,7 +23,8 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
         var div = L.DomUtil.create('div', 'command bord');
         div.innerHTML = 
             "Statistic:<br /><select id='stat'><option value='4'>Percent of Jobs</option><option value='3'>Total Jobs</option></select><br />" +
-            "Select Job Sectors:<br /><select multiple size='20' id='jobsectors'>" +
+            "Select Job Sectors:<br /><select multiple size='22' id='jobsectors'>" +
+  
                 "<option value='11' selected title='Establishments engaged in growing crops, raising animals, harvesting timber'>Agriculture</option>" + 
                 "<option value='21' title='Establishments that extract naturally occurring mineral solids (i.e. coal and ores),  liquid minerals(i.e.crude petroleum) and gases'>Mining</option>" +
                 "<option value='22' title='Establishments engaged in the provision of the following utility services: electric power, natural gas, steam, water supply & sewage removal'>Utilities</option>" +
@@ -40,10 +41,12 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
                 "<option value='56' title='Establishments performing routine support activities for the day-to-day operations of other organizations'>Admin & Waste Management</option>" +
                 "<option value='61' title='Establishments that provide instruction and training in a wide variety of subjects (i.e. schools, colleges, and training centers)'>Education</option>" +
                 "<option value='62' title='Establishments providing health care and social assistance for individuals'>Health Services</option>" +
-                "<option value='71' title='Establishments that operate facilities or provide services to meet varied cultural, entertainment & recreational opportunities'>Arts, Entertainment and Recreation</option>" +
+                "<option value='71' title='Establishments that operate facilities or provide services to meet varied cultural, entertainment & recreational opportunities'>Arts</option>" +
                 "<option value='72' title='Establishments providing customers with lodging and/or preparing meals, snacks & beverages for immediate consumption'>Accommodation & Food Services</option>" +
-                "<option value='81' title='Establishments engaged in repairing & maintenance, personal services or religious / social activities'>Other Services Except Public Administration</option>" +
-                "<option value='99' title='Unclassified'>Unclassified</option>" +
+                "<option value='81' title='Establishments engaged in repairing & maintenance, personal services or religious / social activities'>Other Services Except Public Admin</option>" +
+                "<option value='1' title='Federal government'>Federal Government</option>" + 
+                "<option value='2' title='State government'>State Government</option>" +
+                "<option value='3' title='Local government'>Local Government</option>" +
             "</select>";
             //"<br /><button name='display' id='display' align='center'>Show Data</button>";
             
