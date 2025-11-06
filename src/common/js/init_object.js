@@ -20,7 +20,7 @@ module.exports = function() {
         this.alldata = this.data;
 
         var first_year = function() {
-            var low_year_value = 2023;
+            var low_year_value = 2024;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].population_year < low_year_value) {
                     low_year_value = data[i].population_year;
@@ -31,7 +31,7 @@ module.exports = function() {
         this.first_year = first_year;
 
         var last_year = function() {
-            var high_year_value = 2023;
+            var high_year_value = 2024;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].population_year > high_year_value) {
                     high_year_value = data[i].population_year;
@@ -63,7 +63,7 @@ module.exports = function() {
         this.retrieveTtlJobs = function(fips, year) {
             var alljobs = 0;
             for (let i = 0; i < data.length; i++) {
-                if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id === "0") {
+                if (data[i].area_code === fips && data[i].population_year === year && data[i].sector_id === "10") {
                     alljobs = alljobs + parseInt(data[i].total_jobs);
                 }
             }
