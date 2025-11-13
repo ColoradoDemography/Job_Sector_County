@@ -25,7 +25,7 @@ module.exports = function(map) {
         }]
     })
     
-    infoButton.addTo(map);
+    //infoButton.addTo(map);
     
     
   

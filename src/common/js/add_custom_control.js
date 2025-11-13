@@ -23,7 +23,7 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
         var div = L.DomUtil.create('div', 'command bord');
         div.innerHTML = 
             "Statistic:<br /><select id='stat'><option value='4'>Percent of Jobs</option><option value='3'>Total Jobs</option></select><br />" +
-            "Select Job Sectors:<br /><select multiple size='22' id='jobsectors'>" +
+            "Select Job Sectors:<br /><select multiple size='20' id='jobsectors'>" +
   
                 "<option value='11' selected title='Establishments engaged in growing crops, raising animals, harvesting timber'>Agriculture</option>" + 
                 "<option value='21' title='Establishments that extract naturally occurring mineral solids (i.e. coal and ores),  liquid minerals(i.e.crude petroleum) and gases'>Mining</option>" +
@@ -47,7 +47,8 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
                 "<option value='1' title='Federal government'>Federal Government</option>" + 
                 "<option value='2' title='State government'>State Government</option>" +
                 "<option value='3' title='Local government'>Local Government</option>" +
-            "</select>";
+            "</select>" +
+            "<p><a href=https://drive.google.com/uc?export=download&id=1RPIDGrvUCmsBRNcbhc0jjHg_7rI_JA6h>Download the job data</a></p>";
             //"<br /><button name='display' id='display' align='center'>Show Data</button>";
             
         div.padding = "20px";
