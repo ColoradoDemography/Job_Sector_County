@@ -39,7 +39,7 @@ onmessage = function(e) {
             //     queriedAges += ages[i].age;
             // }
 
-            var queriedYears = "2024";
+            var queriedYears = "2025";
 
             /*for (let i = 0; i < yrs.length; i++) {
                 if (i !== 0) {

@@ -27,8 +27,8 @@ module.exports = function(map: Object, worker_data: Object, resolve: any) {
 
                 layer.setStyle({
                     opacity: 1,
-                    weight: 2,
-                    color: 'cyan'
+                    weight: 1,
+                    color: 'grey'
                 });
 
                 //bring feature to front
