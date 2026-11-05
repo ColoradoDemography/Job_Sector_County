@@ -48,7 +48,7 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
                 "<option value='2' title='State government'>State Government</option>" +
                 "<option value='3' title='Local government'>Local Government</option>" +
             "</select>" +
-            "<p><a href=https://drive.google.com/uc?export=download&id=1RPIDGrvUCmsBRNcbhc0jjHg_7rI_JA6h>Download the job data</a></p>";
+            "<p><a href='https://drive.google.com/uc?export=download&id=1UNRr1FQO-TsPvVxqLxsuEXXCR7ObtY2Z'>Download the job data</a></p>";
             //"<br /><button name='display' id='display' align='center'>Show Data</button>";
             
         div.padding = "20px";
